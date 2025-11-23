@@ -1,11 +1,26 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ApiService } from '../../services/api.service';
 
 @Component({
+  standalone: true,
+  imports: [FormsModule],
   selector: 'app-donacion',
-  imports: [],
-  templateUrl: './donacion.html',
-  styleUrl: './donacion.css',
+  templateUrl: './donacion.component.html'
 })
-export class Donacion {
+export class DonacionComponent {
+  donacion = {
+    cantidad: '',
+    mensaje: ''
+  };
 
+  respuesta = '';
+
+  constructor(private api: ApiService) {}
+
+  enviar() {
+    this.api.enviarDonacion(this.donacion).subscribe(() => {
+      this.respuesta = 'Gracias por tu colaboración 🐶❤️';
+    });
+  }
 }

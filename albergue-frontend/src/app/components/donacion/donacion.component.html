@@ -1,1 +1,12 @@
-<p>donacion works!</p>
+<h2>Donación</h2>
+
+<label>Monto:</label>
+<input [(ngModel)]="donacion.cantidad">
+
+<label>Mensaje:</label>
+<input [(ngModel)]="donacion.mensaje">
+
+<br><br>
+<button (click)="enviar()">Enviar Donación</button>
+
+<p>{{ respuesta }}</p>
