@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DonacionComponent } from './donacion.component';  // ← Cambiado a .component
+
+describe('DonacionComponent', () => {
+  let component: DonacionComponent;
+  let fixture: ComponentFixture<DonacionComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [DonacionComponent]  // ← Así está bien
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(DonacionComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
