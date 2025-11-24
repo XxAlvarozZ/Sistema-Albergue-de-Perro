@@ -1,20 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RegistrarPerroComponent } from './registrar-perro.component';
+import { FormsModule } from '@angular/forms';
 
-import { RegistrarPerro } from './registrar-perro';
-
-describe('RegistrarPerro', () => {
-  let component: RegistrarPerro;
-  let fixture: ComponentFixture<RegistrarPerro>;
+describe('RegistrarPerroComponent', () => {
+  let component: RegistrarPerroComponent;
+  let fixture: ComponentFixture<RegistrarPerroComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RegistrarPerro]
-    })
-    .compileComponents();
+      imports: [
+        RegistrarPerroComponent,
+        FormsModule    // Importar FormsModule si usas ngModel
+      ],
+      providers: []  // aquí puedes poner servicios si el componente los necesita
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(RegistrarPerro);
+    fixture = TestBed.createComponent(RegistrarPerroComponent);
     component = fixture.componentInstance;
-    await fixture.whenStable();
+    fixture.detectChanges();  // importante para inicializar
   });
 
   it('should create', () => {

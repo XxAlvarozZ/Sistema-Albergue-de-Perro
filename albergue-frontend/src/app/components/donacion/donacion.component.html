@@ -1,1 +1,16 @@
-<p>donacion works!</p>
+<div>
+  <h2>Colaboración / Donativo</h2>
+
+  <label>Nombre (opcional):</label>
+  <input name="nombre_donante" [(ngModel)]="donacion.nombre_donante">
+
+  <label>Mensaje:</label>
+  <textarea name="mensaje" [(ngModel)]="donacion.mensaje"></textarea>
+
+  <label>Monto:</label>
+  <input type="number" name="monto" [(ngModel)]="donacion.monto">
+
+  <br/><br/>
+  <button (click)="enviar()">Enviar Donación</button>
+  <p *ngIf="respuesta">{{ respuesta }}</p>
+</div>

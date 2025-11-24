@@ -1,1 +1,24 @@
-<p>registrar-perro works!</p>
+<div>
+  <h2>Registrar Perro</h2>
+
+  <label>Nombre:</label>
+  <input name="nombre" [(ngModel)]="perro.nombre">
+
+  <label>Raza:</label>
+  <input name="raza" [(ngModel)]="perro.raza">
+
+  <label>Edad:</label>
+  <input type="number" name="edad" [(ngModel)]="perro.edad">
+
+  <label>Tamaño:</label>
+  <select name="tamano" [(ngModel)]="perro.tamano">
+    <option value="">Selecciona tamaño</option>
+    <option value="pequeño">Pequeño</option>
+    <option value="mediano">Mediano</option>
+    <option value="grande">Grande</option>
+  </select>
+
+  <br/><br/>
+  <button (click)="registrar()">Registrar</button>
+  <p *ngIf="mensaje">{{ mensaje }}</p>
+</div>

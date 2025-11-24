@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div>
+  <h1>Albergue de Perros</h1>
+  <p>Bienvenido al sistema del albergue.</p>
+
+  <button [routerLink]="['/registrar']">Registrar Perro</button>
+  <button [routerLink]="['/donacion']">Donar</button>
+
+  <hr/>
+
+  <h3>Perros registrados:</h3>
+  <ul>
+    <li *ngFor="let p of perros">
+      Nombre: {{ p.nombre }}, Raza: {{ p.raza }}, Tamaño: {{ p.tamano }}
+    </li>
+  </ul>
+</div>
